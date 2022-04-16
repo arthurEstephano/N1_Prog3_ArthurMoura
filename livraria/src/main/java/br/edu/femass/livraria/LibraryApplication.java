@@ -22,6 +22,13 @@ public class LibraryApplication extends Application {
         stageAutor.setTitle("Autores!");
         stageAutor.setScene(sceneAutor);
         stageAutor.show();
+
+        Stage stageAcademico = new Stage();
+        FXMLLoader fxmlLoaderAcademico = new FXMLLoader(LibraryApplication.class.getResource("academico-view.fxml"));
+        Scene sceneAcademico = new Scene(fxmlLoaderAcademico.load(), 575, 356);
+        stageAcademico.setTitle("Acadêmicos!");
+        stageAcademico.setScene(sceneAcademico);
+        stageAcademico.show();
     }
 
     public static void main(String[] args) {

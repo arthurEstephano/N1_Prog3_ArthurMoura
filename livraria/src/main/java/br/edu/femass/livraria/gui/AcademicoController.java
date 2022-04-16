@@ -3,6 +3,7 @@ package br.edu.femass.livraria.gui;
 import br.edu.femass.livraria.dao.AcademicoDao;
 import br.edu.femass.livraria.model.Academico;
 import br.edu.femass.livraria.model.Estado_Academico;
+import br.edu.femass.livraria.model.GeneroLivro;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -144,6 +145,8 @@ public class AcademicoController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        ObservableList<Estado_Academico> estado_academico = FXCollections.observableArrayList(Estado_Academico.values());
+        CboEstado_Academico.setItems(estado_academico);
         atualizarLista();
     }
 }

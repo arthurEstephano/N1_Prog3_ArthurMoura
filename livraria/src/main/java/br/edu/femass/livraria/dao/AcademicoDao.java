@@ -21,7 +21,7 @@ public class AcademicoDao implements Dao<Academico>{
     public void update(){
         String xml = xstream.toXML(academicos);
         try {
-            FileWriter fw = new FileWriter("autores.xml");
+            FileWriter fw = new FileWriter("academicos.xml");
             fw.write(xml);
             fw.close();
         } catch (IOException e) {

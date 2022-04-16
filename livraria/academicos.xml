@@ -1,0 +1,10 @@
+<list>
+  <Autor>
+    <nome>Alan Galante</nome>
+    <cpf>12345678911</cpf>
+    <estado__academico>Professor</estado__academico>
+    <matricula>1</matricula>
+    <livros__atrasados>false</livros__atrasados>
+    <livros/>
+  </Autor>
+</list>

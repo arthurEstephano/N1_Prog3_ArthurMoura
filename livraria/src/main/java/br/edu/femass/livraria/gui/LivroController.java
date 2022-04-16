@@ -18,6 +18,7 @@ import javafx.scene.input.MouseEvent;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.ResourceBundle;
 
 public class LivroController implements Initializable {
@@ -134,7 +135,7 @@ public class LivroController implements Initializable {
         livro.setAutor(CboAutor.getValue());
         livro.setNome(TxtNome.getText());
         livro.setEdicao(Integer.parseInt(TxtEdicao.getText()));
-        if (CboGenero.getValue() == null || CboAutor.getValue() == null || TxtNome.getText() == ""){
+        if (CboGenero.getValue() == null || CboAutor.getValue() == null || Objects.equals(TxtNome.getText(), "")){
             Alert errorAlert = new Alert(Alert.AlertType.ERROR);
             errorAlert.setHeaderText("Error 403");
             errorAlert.setContentText("É proíbido gravar dados nulos!");
