@@ -8,7 +8,7 @@ public class Livro {
     private Integer edicao;
     private GeneroLivro genero;
     private Boolean emprestimo;
-    private Boolean disponibolidade;
+    private Boolean disponibolidade = false;
     private static Integer proximo_identificador = 1;
     private Integer identificador;
     private String nome;
@@ -22,7 +22,7 @@ public class Livro {
 
     @Override
     public String toString(){
-        return(this.nome + " " + this.edicao + "edição, do ano " + this.ano +" e do gênero " + this.genero + ", é de autoria de: " + this.autor);
+        return(this.nome + " " + this.edicao + " edição, do ano " + this.ano +" e do gênero " + this.genero + ", é de autoria de: " + this.autor);
     }
     }
 
