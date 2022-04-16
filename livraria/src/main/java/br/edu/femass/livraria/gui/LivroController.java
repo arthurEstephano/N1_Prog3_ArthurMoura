@@ -23,8 +23,8 @@ import java.util.ResourceBundle;
 
 public class LivroController implements Initializable {
 
-    private LivroDao livroDao = new LivroDao();
-    private AutorDao autorDao = new AutorDao();
+    private static LivroDao livroDao = new LivroDao();
+    private static AutorDao autorDao = new AutorDao();
 
     @FXML
     private ListView<Livro> LstLivros;
@@ -51,7 +51,7 @@ public class LivroController implements Initializable {
     private TextField TxtEdicao;
 
     @FXML
-    private TextField TxtAno;;
+    private TextField TxtAno;
 
     @FXML
     private ComboBox<GeneroLivro> CboGenero;

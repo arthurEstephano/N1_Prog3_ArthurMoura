@@ -29,6 +29,13 @@ public class LibraryApplication extends Application {
         stageAcademico.setTitle("Acadêmicos!");
         stageAcademico.setScene(sceneAcademico);
         stageAcademico.show();
+
+        Stage stageCopia = new Stage();
+        FXMLLoader fxmlLoaderCopia = new FXMLLoader(LibraryApplication.class.getResource("copiar-livro-view.fxml"));
+        Scene sceneCopia = new Scene(fxmlLoaderCopia.load(), 575, 356);
+        stageCopia.setTitle("Copiar livros!");
+        stageCopia.setScene(sceneCopia);
+        stageCopia.show();
     }
 
     public static void main(String[] args) {

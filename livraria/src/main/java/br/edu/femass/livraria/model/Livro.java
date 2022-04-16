@@ -7,7 +7,7 @@ public class Livro {
     private Integer ano;
     private Integer edicao;
     private GeneroLivro genero;
-    private Boolean emprestimo;
+    private Boolean emprestimo = false;
     private Boolean disponibolidade = false;
     private static Integer proximo_identificador = 1;
     private Integer identificador;
