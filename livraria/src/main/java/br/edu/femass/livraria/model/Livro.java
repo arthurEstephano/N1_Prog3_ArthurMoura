@@ -23,6 +23,14 @@ public class Livro {
         proximo_identificador++;
     }
 
+    public Livro(Integer ano, Integer edicao, GeneroLivro genero, String nome, Autor autor) {
+        this.ano = ano;
+        this.edicao = edicao;
+        this.genero = genero;
+        this.nome = nome;
+        this.autor = autor;
+    }
+
     @Override
     public String toString(){
         return(this.nome + " " + this.edicao + " edição, do ano " + this.ano +" e do gênero " + this.genero + ", é de autoria de: " + this.autor);

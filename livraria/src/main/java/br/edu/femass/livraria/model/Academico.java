@@ -30,6 +30,19 @@ public class Academico {
         }
     }
 
+    public Academico(String nome, String cpf) {
+        this.nome = nome;
+        this.cpf = cpf;
+        this.matricula = proxima_matricula;
+        proxima_matricula++;
+        if(this.getEstado_academico() == Professor){
+            dias = 30;
+        }
+        else {
+            dias = 5;
+        }
+    }
+
     @Override
     public String toString(){
         return(this.estado_academico.toString() + " " + this.nome);
