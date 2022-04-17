@@ -23,8 +23,8 @@ import java.util.ResourceBundle;
 
 public class LivroController implements Initializable {
 
-    private static LivroDao livroDao = new LivroDao();
-    private static AutorDao autorDao = new AutorDao();
+    private static final LivroDao livroDao = new LivroDao();
+    private static final AutorDao autorDao = new AutorDao();
 
     @FXML
     private ListView<Livro> LstLivros;

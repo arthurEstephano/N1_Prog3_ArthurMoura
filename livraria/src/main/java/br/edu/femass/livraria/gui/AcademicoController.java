@@ -3,7 +3,6 @@ package br.edu.femass.livraria.gui;
 import br.edu.femass.livraria.dao.AcademicoDao;
 import br.edu.femass.livraria.model.Academico;
 import br.edu.femass.livraria.model.Estado_Academico;
-import br.edu.femass.livraria.model.GeneroLivro;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -20,7 +19,7 @@ import java.util.Objects;
 import java.util.ResourceBundle;
 
 public class AcademicoController implements Initializable {
-    private AcademicoDao academicoDao = new AcademicoDao();
+    private final AcademicoDao academicoDao = new AcademicoDao();
 
     @FXML
     private ListView<Academico> LstAcademicos;
@@ -107,10 +106,11 @@ public class AcademicoController implements Initializable {
     @FXML
     private void BtnGravar_Action(ActionEvent evento) {
         Academico academico = new Academico();
+        academico.setMatricula(academico.getMatricula());
         academico.setCpf(TxtCPF.getText());
         academico.setNome(TxtNome.getText());
         academico.setEstado_academico(CboEstado_Academico.getValue());
-        if (Objects.equals(TxtCPF.getText(), "") || TxtNome.getText() == "" || CboEstado_Academico.getValue() == null){
+        if (Objects.equals(TxtCPF.getText(), "") || Objects.equals(TxtNome.getText(), "") || CboEstado_Academico.getValue() == null){
             Alert errorAlert = new Alert(Alert.AlertType.ERROR);
             errorAlert.setHeaderText("Error 403");
             errorAlert.setContentText("É proíbido gravar dados nulos!");

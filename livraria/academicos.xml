@@ -1,18 +1,20 @@
 <list>
   <Autor>
-    <nome>Alan Galante</nome>
-    <cpf>12345678911</cpf>
-    <estado__academico>Professor</estado__academico>
-    <matricula>1</matricula>
-    <livros__atrasados>false</livros__atrasados>
-    <livros/>
-  </Autor>
-  <Autor>
-    <nome>Yago Frossard</nome>
+    <nome>Lucas Fernando</nome>
     <cpf>11111111111</cpf>
     <estado__academico>Aluno</estado__academico>
     <matricula>1</matricula>
     <livros__atrasados>false</livros__atrasados>
-    <livros/>
+    <livros__alugados/>
+    <dias>5</dias>
+  </Autor>
+  <Autor>
+    <nome>Alan Galante</nome>
+    <cpf>22222222222</cpf>
+    <estado__academico>Professor</estado__academico>
+    <matricula>2</matricula>
+    <livros__atrasados>false</livros__atrasados>
+    <livros__alugados/>
+    <dias>5</dias>
   </Autor>
 </list>

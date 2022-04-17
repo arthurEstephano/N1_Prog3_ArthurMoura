@@ -10,33 +10,16 @@ import java.io.IOException;
 public class LibraryApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoaderLivro = new FXMLLoader(LibraryApplication.class.getResource("livro-view.fxml"));
-        Scene sceneLivro = new Scene(fxmlLoaderLivro.load(), 575, 356);
-        stage.setTitle("Livros!");
-        stage.setScene(sceneLivro);
+        FXMLLoader fxmlLoaderMenu = new FXMLLoader(LibraryApplication.class.getResource("menu-view.fxml"));
+        Scene sceneMenu = new Scene(fxmlLoaderMenu.load(), 575, 356);
+        stage.setTitle("Menu interativo.");
+        stage.setScene(sceneMenu);
         stage.show();
 
-        Stage stageAutor = new Stage();
-        FXMLLoader fxmlLoaderAutor = new FXMLLoader(LibraryApplication.class.getResource("autor-view.fxml"));
-        Scene sceneAutor = new Scene(fxmlLoaderAutor.load(), 575, 356);
-        stageAutor.setTitle("Autores!");
-        stageAutor.setScene(sceneAutor);
-        stageAutor.show();
-
-        Stage stageAcademico = new Stage();
-        FXMLLoader fxmlLoaderAcademico = new FXMLLoader(LibraryApplication.class.getResource("academico-view.fxml"));
-        Scene sceneAcademico = new Scene(fxmlLoaderAcademico.load(), 575, 356);
-        stageAcademico.setTitle("Acadêmicos!");
-        stageAcademico.setScene(sceneAcademico);
-        stageAcademico.show();
-
-        Stage stageCopia = new Stage();
-        FXMLLoader fxmlLoaderCopia = new FXMLLoader(LibraryApplication.class.getResource("copiar-livro-view.fxml"));
-        Scene sceneCopia = new Scene(fxmlLoaderCopia.load(), 575, 356);
-        stageCopia.setTitle("Copiar livros!");
-        stageCopia.setScene(sceneCopia);
-        stageCopia.show();
+        //TODO: Tirar dúvida sobre seleção de paineis múltiplos
     }
+
+
 
     public static void main(String[] args) {
         launch();

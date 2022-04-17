@@ -2,6 +2,7 @@ package br.edu.femass.livraria.model;
 
 import lombok.Data;
 
+import java.time.LocalDate;
 @Data
 public class Livro {
     private Integer ano;
@@ -13,7 +14,9 @@ public class Livro {
     private Integer identificador;
     private String nome;
     private Autor autor;
-
+    private LocalDate data_emprestimo;
+    private LocalDate data_devolucao;
+    private LocalDate data_prev_delovucao;
 
     public Livro() {
         identificador = proximo_identificador;
