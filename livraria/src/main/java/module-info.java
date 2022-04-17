@@ -3,6 +3,7 @@ module br.edu.femass.livraria {
     requires javafx.fxml;
     requires lombok;
     requires xstream;
+    requires org.junit.jupiter.api;
 
 
     opens br.edu.femass.livraria to javafx.fxml;

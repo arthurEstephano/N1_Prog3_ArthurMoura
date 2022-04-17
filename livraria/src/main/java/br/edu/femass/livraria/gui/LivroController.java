@@ -18,12 +18,13 @@ import javafx.scene.input.MouseEvent;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.ResourceBundle;
 
 public class LivroController implements Initializable {
 
-    private LivroDao livroDao = new LivroDao();
-    private AutorDao autorDao = new AutorDao();
+    private static final LivroDao livroDao = new LivroDao();
+    private static final AutorDao autorDao = new AutorDao();
 
     @FXML
     private ListView<Livro> LstLivros;
@@ -50,7 +51,7 @@ public class LivroController implements Initializable {
     private TextField TxtEdicao;
 
     @FXML
-    private TextField TxtAno;;
+    private TextField TxtAno;
 
     @FXML
     private ComboBox<GeneroLivro> CboGenero;
@@ -104,6 +105,7 @@ public class LivroController implements Initializable {
 
     @FXML
     private void BtnIncluir_Action(ActionEvent evento) {
+        atualizarLista();
         habilitarInterface(true);
         limparTela();
         TxtNome.requestFocus();
@@ -133,7 +135,7 @@ public class LivroController implements Initializable {
         livro.setAutor(CboAutor.getValue());
         livro.setNome(TxtNome.getText());
         livro.setEdicao(Integer.parseInt(TxtEdicao.getText()));
-        if (TxtAno != null || TxtEdicao != null || CboGenero != null || CboAutor != null || TxtNome != null){
+        if (CboGenero.getValue() == null || CboAutor.getValue() == null || Objects.equals(TxtNome.getText(), "")){
             Alert errorAlert = new Alert(Alert.AlertType.ERROR);
             errorAlert.setHeaderText("Error 403");
             errorAlert.setContentText("É proíbido gravar dados nulos!");

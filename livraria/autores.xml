@@ -3,4 +3,8 @@
     <nome>Yago</nome>
     <sobrenome>Frossard</sobrenome>
   </Autor>
+  <Autor>
+    <nome>Alan</nome>
+    <sobrenome>Galante</sobrenome>
+  </Autor>
 </list>

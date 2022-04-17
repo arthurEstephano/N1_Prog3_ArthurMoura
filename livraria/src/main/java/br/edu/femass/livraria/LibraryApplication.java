@@ -10,19 +10,16 @@ import java.io.IOException;
 public class LibraryApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoaderLivro = new FXMLLoader(LibraryApplication.class.getResource("livro-view.fxml"));
-        Scene sceneLivro = new Scene(fxmlLoaderLivro.load(), 575, 356);
-        stage.setTitle("Livros!");
-        stage.setScene(sceneLivro);
+        FXMLLoader fxmlLoaderMenu = new FXMLLoader(LibraryApplication.class.getResource("menu-view.fxml"));
+        Scene sceneMenu = new Scene(fxmlLoaderMenu.load(), 575, 356);
+        stage.setTitle("Menu interativo.");
+        stage.setScene(sceneMenu);
         stage.show();
 
-        Stage stageAutor = new Stage();
-        FXMLLoader fxmlLoaderAutor = new FXMLLoader(LibraryApplication.class.getResource("autor-view.fxml"));
-        Scene sceneAutor = new Scene(fxmlLoaderAutor.load(), 575, 356);
-        stageAutor.setTitle("Autores!");
-        stageAutor.setScene(sceneAutor);
-        stageAutor.show();
+        //TODO: Tirar dúvida sobre seleção de paineis múltiplos
     }
+
+
 
     public static void main(String[] args) {
         launch();
