@@ -67,7 +67,6 @@ public class MovimentacaoController implements Initializable {
         }
 
         ObservableList<Livro> livrosOb = FXCollections.observableArrayList(livros);
-
         LstLivros.setItems(livrosOb);
 
         ObservableList<Academico> academicosOb = FXCollections.observableArrayList(academicos);
