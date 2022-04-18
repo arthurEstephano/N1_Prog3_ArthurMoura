@@ -58,8 +58,8 @@ public class MovimentacaoController implements Initializable {
 
 
         academico.Alugar_Livro(livro);
-        academicoDao.update();
         livroDao.update();
+        academicoDao.update();
         atualizarLista();
     }
 

@@ -89,6 +89,7 @@ public class Academico {
     }
     public void Retornar_Livro(Livro livro){
         Alert infoAlert = new Alert(Alert.AlertType.INFORMATION);
+        if(this.livros_alugados == null){return;}
         for (Livro livros: this.livros_alugados) {
             if(livros == livro){
                 this.livros_alugados.remove(livro);
@@ -104,6 +105,7 @@ public class Academico {
             }
             else{
                 this.livros_atrasados = false;
+                this.livros_alugados.remove(livro);
                 infoAlert.setHeaderText("Informativo.");
                 infoAlert.setContentText("Você está sem pendências.");
                 infoAlert.showAndWait();
