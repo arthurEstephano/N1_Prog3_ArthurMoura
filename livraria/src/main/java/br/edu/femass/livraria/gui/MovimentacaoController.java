@@ -60,8 +60,9 @@ public class MovimentacaoController implements Initializable {
         Livro livro = (Livro) ChBoxLivros.getSelectionModel().getSelectedItem();
         Academico academico = (Academico) ChBoxAcademicos.getSelectionModel().getSelectedItem();
 
+
         academico.Alugar_Livro(livro);
-        academicoDao.atualizar(academico);
+        academicoDao.atualiz(academico);
         atualizarLista();
     }
 

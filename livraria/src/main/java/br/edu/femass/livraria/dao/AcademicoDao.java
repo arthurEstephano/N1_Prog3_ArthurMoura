@@ -1,6 +1,7 @@
 package br.edu.femass.livraria.dao;
 
 import br.edu.femass.livraria.model.Academico;
+import br.edu.femass.livraria.model.Livro;
 import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.security.NoTypePermission;
 import com.thoughtworks.xstream.security.NullPermission;
@@ -35,10 +36,20 @@ public class AcademicoDao implements Dao<Academico>{
         update();
     }
 
-    public void atualizar(Academico objeto){
-        academicos.set(academicos.indexOf(objeto), objeto);
+    public void atualiz(Academico objeto){
+        int cont = 0;
+        int index;
+        for (Academico academico:academicos) {
+            if(academico.equals(objeto)){
+                index = cont;
+                academicos.set(index, objeto);
+                break;
+            }
+            cont++;
+        }
         update();
     }
+
 
     @Override
     public List<Academico> listar(){
