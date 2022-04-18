@@ -11,7 +11,7 @@ public class LibraryApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoaderMenu = new FXMLLoader(LibraryApplication.class.getResource("menu-view.fxml"));
-        Scene sceneMenu = new Scene(fxmlLoaderMenu.load(), 575, 356);
+        Scene sceneMenu = new Scene(fxmlLoaderMenu.load(), 483, 200);
         stage.setTitle("Menu interativo.");
         stage.setScene(sceneMenu);
         stage.show();

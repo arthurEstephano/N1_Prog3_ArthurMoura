@@ -10,6 +10,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.ListView;
 
 import java.net.URL;
@@ -33,24 +34,34 @@ public class MovimentacaoController implements Initializable {
     @FXML
     private Button BtnDevolver;
 
+    @FXML
+    private ChoiceBox ChBoxLivros;
+
+    @FXML
+    private ChoiceBox ChBoxAcademicos;
+
     public MovimentacaoController() {
     }
 
 
     @FXML
     private void BtnDevolver_Action(ActionEvent evento) {
-        Livro livro = LstLivros.getSelectionModel().getSelectedItem();
-        Academico academico = LstAcademicos.getSelectionModel().getSelectedItem();
+        Livro livro = (Livro) ChBoxLivros.getSelectionModel().getSelectedItem();
+        Academico academico = (Academico) ChBoxAcademicos.getSelectionModel().getSelectedItem();
 
         academico.Retornar_Livro(livro);
         atualizarLista();
     }
     @FXML
     private void BtnAlugar_Action(ActionEvent evento) {
-        Livro livro = LstLivros.getSelectionModel().getSelectedItem();
-        Academico academico = LstAcademicos.getSelectionModel().getSelectedItem();
+        if(ChBoxLivros.getSelectionModel().getSelectedItem() =="" || ChBoxAcademicos.getSelectionModel().getSelectedItem() == ""){
+            return;
+        }
+        Livro livro = (Livro) ChBoxLivros.getSelectionModel().getSelectedItem();
+        Academico academico = (Academico) ChBoxAcademicos.getSelectionModel().getSelectedItem();
 
         academico.Alugar_Livro(livro);
+        academicoDao.atualizar(academico);
         atualizarLista();
     }
 
@@ -58,7 +69,8 @@ public class MovimentacaoController implements Initializable {
 
     private void atualizarLista() {
         List<Livro> livros;
-        List<Academico> academicos;try {
+        List<Academico> academicos;
+        try {
             livros = livroDao.listar();
             academicos = academicoDao.listar();
         } catch (Exception e) {
@@ -68,9 +80,11 @@ public class MovimentacaoController implements Initializable {
 
         ObservableList<Livro> livrosOb = FXCollections.observableArrayList(livros);
         LstLivros.setItems(livrosOb);
+        ChBoxLivros.setItems(livrosOb);
 
         ObservableList<Academico> academicosOb = FXCollections.observableArrayList(academicos);
         LstAcademicos.setItems(academicosOb);
+        ChBoxAcademicos.setItems(academicosOb);
     }
 
     @Override

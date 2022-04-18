@@ -35,9 +35,14 @@ public class AcademicoDao implements Dao<Academico>{
         update();
     }
 
+    public void atualizar(Academico objeto){
+        academicos.set(academicos.indexOf(objeto), objeto);
+        update();
+    }
+
     @Override
     public List<Academico> listar(){
-        xstream.alias("Autor", Academico.class);
+        xstream.alias("Academico", Academico.class);
         xstream.addPermission(NoTypePermission.NONE);
         xstream.addPermission(NullPermission.NULL);
         xstream.addPermission(PrimitiveTypePermission.PRIMITIVES);

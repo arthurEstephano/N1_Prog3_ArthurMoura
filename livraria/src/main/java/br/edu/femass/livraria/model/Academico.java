@@ -78,13 +78,12 @@ public class Academico {
             errorAlert.showAndWait();
         }
         else {
-            livros_alugados.add(livro);
             livro.setEmprestimo(true);
-
             livro.setData_emprestimo(LocalDate.now());
             livro.setData_prev_delovucao(LocalDate.now().plusDays(dias));
+            this.livros_alugados.add(livro);
             Alert sucessAlert = new Alert(Alert.AlertType.CONFIRMATION);
-            sucessAlert.setContentText("O livro " + livro.getNome() + "agora está alugado, o mesmo deve ser devolvido em " + dias + " dias.");
+            sucessAlert.setContentText("O livro " + livro.getNome() + " agora está alugado, o mesmo deve ser devolvido em " + dias + " dias.");
             sucessAlert.showAndWait();
         }
     }
