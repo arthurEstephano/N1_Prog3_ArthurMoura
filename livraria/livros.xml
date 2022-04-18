@@ -2,11 +2,11 @@
   <Livro>
     <ano>2022</ano>
     <edicao>99</edicao>
-    <genero>Ficcao</genero>
+    <genero>Suspense</genero>
     <emprestimo>false</emprestimo>
     <disponibolidade>false</disponibolidade>
     <identificador>1</identificador>
-    <nome>Vale dos sem Luz</nome>
+    <nome>Vale dos sem luz</nome>
     <autor>
       <nome>Yago</nome>
       <sobrenome>Frossard</sobrenome>
@@ -15,81 +15,23 @@
   <Livro>
     <ano>2022</ano>
     <edicao>99</edicao>
-    <genero>Ficcao</genero>
-    <emprestimo>false</emprestimo>
-    <disponibolidade>true</disponibolidade>
-    <identificador>2</identificador>
-    <nome>Vale dos sem Luz</nome>
-    <autor reference="../../Livro/autor"/>
-  </Livro>
-  <Livro>
-    <ano>2022</ano>
-    <edicao>99</edicao>
-    <genero>Ficcao</genero>
-    <emprestimo>false</emprestimo>
+    <genero>Suspense</genero>
+    <emprestimo>true</emprestimo>
     <disponibolidade>true</disponibolidade>
     <identificador>3</identificador>
-    <nome>Vale dos sem Luz</nome>
+    <nome>Vale dos sem luz</nome>
     <autor reference="../../Livro/autor"/>
+    <data__emprestimo>2022-04-18</data__emprestimo>
+    <data__prev__delovucao>2022-04-23</data__prev__delovucao>
   </Livro>
   <Livro>
     <ano>2022</ano>
     <edicao>99</edicao>
-    <genero>Ficcao</genero>
+    <genero>Suspense</genero>
     <emprestimo>false</emprestimo>
     <disponibolidade>true</disponibolidade>
-    <identificador>4</identificador>
-    <nome>Vale dos sem Luz</nome>
-    <autor reference="../../Livro/autor"/>
-  </Livro>
-  <Livro>
-    <ano>2022</ano>
-    <edicao>99</edicao>
-    <genero>Ficcao</genero>
-    <emprestimo>false</emprestimo>
-    <disponibolidade>true</disponibolidade>
-    <identificador>5</identificador>
-    <nome>Vale dos sem Luz</nome>
-    <autor reference="../../Livro/autor"/>
-  </Livro>
-  <Livro>
-    <ano>2022</ano>
-    <edicao>99</edicao>
-    <genero>Ficcao</genero>
-    <emprestimo>false</emprestimo>
-    <disponibolidade>true</disponibolidade>
-    <identificador>6</identificador>
-    <nome>Vale dos sem Luz</nome>
-    <autor reference="../../Livro/autor"/>
-  </Livro>
-  <Livro>
-    <ano>2022</ano>
-    <edicao>99</edicao>
-    <genero>Ficcao</genero>
-    <emprestimo>false</emprestimo>
-    <disponibolidade>true</disponibolidade>
-    <identificador>7</identificador>
-    <nome>Vale dos sem Luz</nome>
-    <autor reference="../../Livro/autor"/>
-  </Livro>
-  <Livro>
-    <ano>2022</ano>
-    <edicao>99</edicao>
-    <genero>Ficcao</genero>
-    <emprestimo>false</emprestimo>
-    <disponibolidade>true</disponibolidade>
-    <identificador>8</identificador>
-    <nome>Vale dos sem Luz</nome>
-    <autor reference="../../Livro/autor"/>
-  </Livro>
-  <Livro>
-    <ano>2022</ano>
-    <edicao>99</edicao>
-    <genero>Ficcao</genero>
-    <emprestimo>false</emprestimo>
-    <disponibolidade>true</disponibolidade>
-    <identificador>9</identificador>
-    <nome>Vale dos sem Luz</nome>
+    <identificador>12</identificador>
+    <nome>Vale dos sem luz</nome>
     <autor reference="../../Livro/autor"/>
   </Livro>
 </list>

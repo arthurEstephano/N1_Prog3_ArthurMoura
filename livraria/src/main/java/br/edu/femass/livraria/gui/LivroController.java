@@ -160,13 +160,13 @@ public class LivroController implements Initializable {
 
     private void atualizarLista() {
         List<Livro> livros;
-        List<Autor> autores;
+        List<Autor> autores = new ArrayList<>();;
         try {
-            livros = livroDao.listar();
             autores = autorDao.listar();
+            livros = livroDao.listar();
+
         } catch (Exception e) {
             livros = new ArrayList<>();
-            autores = new ArrayList<>();
         }
 
         ObservableList<Livro> livrosOb = FXCollections.observableArrayList(livros);

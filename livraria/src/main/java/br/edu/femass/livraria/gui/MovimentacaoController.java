@@ -40,10 +40,6 @@ public class MovimentacaoController implements Initializable {
     @FXML
     private ChoiceBox ChBoxAcademicos;
 
-    public MovimentacaoController() {
-    }
-
-
     @FXML
     private void BtnDevolver_Action(ActionEvent evento) {
         Livro livro = (Livro) ChBoxLivros.getSelectionModel().getSelectedItem();
@@ -62,7 +58,8 @@ public class MovimentacaoController implements Initializable {
 
 
         academico.Alugar_Livro(livro);
-        academicoDao.atualiz(academico);
+        academicoDao.update();
+        livroDao.update();
         atualizarLista();
     }
 

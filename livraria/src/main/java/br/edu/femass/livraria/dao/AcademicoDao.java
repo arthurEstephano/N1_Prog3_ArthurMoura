@@ -36,21 +36,6 @@ public class AcademicoDao implements Dao<Academico>{
         update();
     }
 
-    public void atualiz(Academico objeto){
-        int cont = 0;
-        int index;
-        for (Academico academico:academicos) {
-            if(academico.equals(objeto)){
-                index = cont;
-                academicos.set(index, objeto);
-                break;
-            }
-            cont++;
-        }
-        update();
-    }
-
-
     @Override
     public List<Academico> listar(){
         xstream.alias("Academico", Academico.class);

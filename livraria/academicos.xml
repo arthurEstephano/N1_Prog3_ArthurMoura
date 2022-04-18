@@ -1,7 +1,7 @@
 <list>
   <Academico>
     <nome>Alan G</nome>
-    <cpf>12345678911</cpf>
+    <cpf>12345678910</cpf>
     <estado__academico>Professor</estado__academico>
     <matricula>1</matricula>
     <livros__atrasados>false</livros__atrasados>
@@ -9,11 +9,11 @@
       <br.edu.femass.livraria.model.Livro>
         <ano>2022</ano>
         <edicao>99</edicao>
-        <genero>Ficcao</genero>
+        <genero>Suspense</genero>
         <emprestimo>true</emprestimo>
         <disponibolidade>true</disponibolidade>
-        <identificador>2</identificador>
-        <nome>Vale dos sem Luz</nome>
+        <identificador>3</identificador>
+        <nome>Vale dos sem luz</nome>
         <autor>
           <nome>Yago</nome>
           <sobrenome>Frossard</sobrenome>
