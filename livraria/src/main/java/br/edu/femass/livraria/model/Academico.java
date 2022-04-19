@@ -98,7 +98,19 @@ public class Academico {
         public void Retornar_Livro(Livro livro){
             //TODO: Para usar os métodos de teste, deve-se comentar todas as linnhas na classe acadêmico que contém "Alert"
             if(this.livros_alugados == null){return;}
-            if(!livros_alugados.contains(livro)) {
+            List<Livro> atrasos = new ArrayList<>();
+            for (Livro livros: this.livros_alugados) {
+                    if (livros.getData_prev_delovucao().isBefore(LocalDate.now())) {
+                        atrasos.add(livros);
+                }
+            }
+            if(atrasos.size() >= 1 && !atrasos.contains(livro)){
+                this.setLivros_atrasados(true);
+            }
+            else{
+                this.setLivros_atrasados(false);
+            }
+            if(!this.livros_alugados.contains(livro)) {
                 Alert errorAlert = new Alert(Alert.AlertType.ERROR);
                 errorAlert.setHeaderText("Error 403");
                 errorAlert.setContentText("Você não está com esse livro em sua posse.");
