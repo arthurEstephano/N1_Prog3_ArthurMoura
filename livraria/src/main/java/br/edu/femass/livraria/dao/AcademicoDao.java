@@ -2,6 +2,8 @@ package br.edu.femass.livraria.dao;
 
 import br.edu.femass.livraria.model.Academico;
 import com.thoughtworks.xstream.XStream;
+import com.thoughtworks.xstream.io.xml.DomDriver;
+import com.thoughtworks.xstream.security.AnyTypePermission;
 import com.thoughtworks.xstream.security.NoTypePermission;
 import com.thoughtworks.xstream.security.NullPermission;
 import com.thoughtworks.xstream.security.PrimitiveTypePermission;
@@ -15,7 +17,7 @@ import java.util.List;
 
 public class AcademicoDao implements Dao<Academico>{
 
-    private final XStream xstream = new XStream();
+    private final XStream xstream = new XStream(new DomDriver());
     private static List<Academico> academicos = new ArrayList<>();
 
     public void update(){
@@ -37,12 +39,13 @@ public class AcademicoDao implements Dao<Academico>{
 
     @Override
     public List<Academico> listar(){
-        xstream.alias("Autor", Academico.class);
+        xstream.alias   ("Academico", Academico.class);
         xstream.addPermission(NoTypePermission.NONE);
         xstream.addPermission(NullPermission.NULL);
         xstream.addPermission(PrimitiveTypePermission.PRIMITIVES);
         xstream.allowTypeHierarchy(Collection.class);
         xstream.allowTypes(new Class[] {Academico.class});
+        xstream.addPermission(AnyTypePermission.ANY);
         academicos = (List<Academico>) xstream.fromXML(new File("academicos.xml"));
         return academicos;
     }

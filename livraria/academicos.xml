@@ -1,20 +1,53 @@
 <list>
-  <Autor>
-    <nome>Lucas Fernando</nome>
+  <Academico>
+    <nome>Alan Galante</nome>
     <cpf>11111111111</cpf>
-    <estado__academico>Aluno</estado__academico>
+    <estado__academico>Professor</estado__academico>
     <matricula>1</matricula>
     <livros__atrasados>false</livros__atrasados>
-    <livros__alugados/>
+    <livros__alugados>
+      <br.edu.femass.livraria.model.Livro>
+        <ano>2022</ano>
+        <edicao>225</edicao>
+        <genero>Suspense</genero>
+        <emprestimo>true</emprestimo>
+        <disponibolidade>true</disponibolidade>
+        <identificador>3</identificador>
+        <nome>Vale dos Sem Luz</nome>
+        <autor>
+          <nome>Yago</nome>
+          <sobrenome>Frossard</sobrenome>
+        </autor>
+        <data__emprestimo>2022-04-19</data__emprestimo>
+        <data__devolucao>2022-04-19</data__devolucao>
+        <data__prev__delovucao>2022-04-24</data__prev__delovucao>
+      </br.edu.femass.livraria.model.Livro>
+    </livros__alugados>
     <dias>5</dias>
-  </Autor>
-  <Autor>
-    <nome>Alan Galante</nome>
-    <cpf>22222222222</cpf>
-    <estado__academico>Professor</estado__academico>
+  </Academico>
+  <Academico>
+    <nome>Lucas F</nome>
+    <cpf>222222222222</cpf>
+    <estado__academico>Aluno</estado__academico>
     <matricula>2</matricula>
     <livros__atrasados>false</livros__atrasados>
-    <livros__alugados/>
+    <livros__alugados>
+      <br.edu.femass.livraria.model.Livro>
+        <ano>2022</ano>
+        <edicao>225</edicao>
+        <genero>Suspense</genero>
+        <emprestimo>true</emprestimo>
+        <disponibolidade>true</disponibolidade>
+        <identificador>4</identificador>
+        <nome>Vale dos Sem Luz</nome>
+        <autor>
+          <nome>Yago</nome>
+          <sobrenome>Frossard</sobrenome>
+        </autor>
+        <data__emprestimo>2022-04-19</data__emprestimo>
+        <data__prev__delovucao>2022-04-24</data__prev__delovucao>
+      </br.edu.femass.livraria.model.Livro>
+    </livros__alugados>
     <dias>5</dias>
-  </Autor>
+  </Academico>
 </list>

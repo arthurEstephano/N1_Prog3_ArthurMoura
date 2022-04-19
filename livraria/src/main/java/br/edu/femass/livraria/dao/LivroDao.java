@@ -3,6 +3,7 @@ package br.edu.femass.livraria.dao;
 import br.edu.femass.livraria.model.GeneroLivro;
 import br.edu.femass.livraria.model.Livro;
 import com.thoughtworks.xstream.XStream;
+import com.thoughtworks.xstream.security.AnyTypePermission;
 import com.thoughtworks.xstream.security.NoTypePermission;
 import com.thoughtworks.xstream.security.NullPermission;
 import com.thoughtworks.xstream.security.PrimitiveTypePermission;
@@ -40,6 +41,7 @@ public class LivroDao implements Dao<Livro>{
         xstream.addPermission(PrimitiveTypePermission.PRIMITIVES);
         xstream.allowTypeHierarchy(Collection.class);
         xstream.allowTypes(new Class[] {Livro.class, GeneroLivro.class});
+        xstream.addPermission(AnyTypePermission.ANY);
         livros = (List<Livro>) xstream.fromXML(new File("livros.xml"));
         return livros;
     }
