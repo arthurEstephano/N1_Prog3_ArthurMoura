@@ -10,7 +10,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
-import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.ListView;
 
 import java.net.URL;
@@ -35,26 +35,33 @@ public class MovimentacaoController implements Initializable {
     private Button BtnDevolver;
 
     @FXML
-    private ChoiceBox ChBoxLivros;
+    private ComboBox<Livro> CboLivros;
 
     @FXML
-    private ChoiceBox ChBoxAcademicos;
+    private ComboBox<Academico> CboAcademicos;
 
     @FXML
     private void BtnDevolver_Action(ActionEvent evento) {
-        Livro livro = (Livro) ChBoxLivros.getSelectionModel().getSelectedItem();
-        Academico academico = (Academico) ChBoxAcademicos.getSelectionModel().getSelectedItem();
+        atualizarLista();
+        if(CboLivros.getValue() == null || CboAcademicos.getValue() == null){
+            return;
+        }
+        Livro livro = CboLivros.getSelectionModel().getSelectedItem();
+        Academico academico = CboAcademicos.getSelectionModel().getSelectedItem();
 
         academico.Retornar_Livro(livro);
+        academicoDao.update();
+        livroDao.update();
         atualizarLista();
     }
     @FXML
     private void BtnAlugar_Action(ActionEvent evento) {
-        if(ChBoxLivros.getSelectionModel().getSelectedItem() =="" || ChBoxAcademicos.getSelectionModel().getSelectedItem() == ""){
+        atualizarLista();
+        if(CboLivros.getValue() == null || CboAcademicos.getValue() == null){
             return;
         }
-        Livro livro = (Livro) ChBoxLivros.getSelectionModel().getSelectedItem();
-        Academico academico = (Academico) ChBoxAcademicos.getSelectionModel().getSelectedItem();
+        Livro livro = CboLivros.getSelectionModel().getSelectedItem();
+        Academico academico = CboAcademicos.getSelectionModel().getSelectedItem();
 
 
         academico.Alugar_Livro(livro);
@@ -72,17 +79,18 @@ public class MovimentacaoController implements Initializable {
             livros = livroDao.listar();
             academicos = academicoDao.listar();
         } catch (Exception e) {
+            e.printStackTrace();
             livros = new ArrayList<>();
             academicos = new ArrayList<>();
         }
 
         ObservableList<Livro> livrosOb = FXCollections.observableArrayList(livros);
         LstLivros.setItems(livrosOb);
-        ChBoxLivros.setItems(livrosOb);
+        CboLivros.setItems(livrosOb);
 
         ObservableList<Academico> academicosOb = FXCollections.observableArrayList(academicos);
         LstAcademicos.setItems(academicosOb);
-        ChBoxAcademicos.setItems(academicosOb);
+        CboAcademicos.setItems(academicosOb);
     }
 
     @Override

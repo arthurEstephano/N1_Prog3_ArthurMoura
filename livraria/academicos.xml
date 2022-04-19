@@ -1,27 +1,37 @@
 <list>
   <Academico>
-    <nome>Alan G</nome>
-    <cpf>12345678910</cpf>
+    <nome>Alan Galante</nome>
+    <cpf>11111111111</cpf>
     <estado__academico>Professor</estado__academico>
     <matricula>1</matricula>
     <livros__atrasados>false</livros__atrasados>
     <livros__alugados>
       <br.edu.femass.livraria.model.Livro>
         <ano>2022</ano>
-        <edicao>99</edicao>
+        <edicao>225</edicao>
         <genero>Suspense</genero>
         <emprestimo>true</emprestimo>
         <disponibolidade>true</disponibolidade>
         <identificador>3</identificador>
-        <nome>Vale dos sem luz</nome>
+        <nome>Vale dos Sem Luz</nome>
         <autor>
           <nome>Yago</nome>
           <sobrenome>Frossard</sobrenome>
         </autor>
         <data__emprestimo>2022-04-18</data__emprestimo>
+        <data__devolucao>2022-04-18</data__devolucao>
         <data__prev__delovucao>2022-04-23</data__prev__delovucao>
       </br.edu.femass.livraria.model.Livro>
     </livros__alugados>
+    <dias>5</dias>
+  </Academico>
+  <Academico>
+    <nome>Lucas F</nome>
+    <cpf>222222222222</cpf>
+    <estado__academico>Aluno</estado__academico>
+    <matricula>2</matricula>
+    <livros__atrasados>false</livros__atrasados>
+    <livros__alugados/>
     <dias>5</dias>
   </Academico>
 </list>

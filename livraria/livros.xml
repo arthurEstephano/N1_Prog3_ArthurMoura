@@ -1,12 +1,12 @@
 <list>
   <Livro>
     <ano>2022</ano>
-    <edicao>99</edicao>
+    <edicao>225</edicao>
     <genero>Suspense</genero>
     <emprestimo>false</emprestimo>
     <disponibolidade>false</disponibolidade>
     <identificador>1</identificador>
-    <nome>Vale dos sem luz</nome>
+    <nome>Vale dos Sem Luz</nome>
     <autor>
       <nome>Yago</nome>
       <sobrenome>Frossard</sobrenome>
@@ -14,24 +14,25 @@
   </Livro>
   <Livro>
     <ano>2022</ano>
-    <edicao>99</edicao>
+    <edicao>225</edicao>
     <genero>Suspense</genero>
     <emprestimo>true</emprestimo>
     <disponibolidade>true</disponibolidade>
     <identificador>3</identificador>
-    <nome>Vale dos sem luz</nome>
+    <nome>Vale dos Sem Luz</nome>
     <autor reference="../../Livro/autor"/>
     <data__emprestimo>2022-04-18</data__emprestimo>
+    <data__devolucao>2022-04-18</data__devolucao>
     <data__prev__delovucao>2022-04-23</data__prev__delovucao>
   </Livro>
   <Livro>
     <ano>2022</ano>
-    <edicao>99</edicao>
+    <edicao>225</edicao>
     <genero>Suspense</genero>
     <emprestimo>false</emprestimo>
     <disponibolidade>true</disponibolidade>
-    <identificador>12</identificador>
-    <nome>Vale dos sem luz</nome>
+    <identificador>4</identificador>
+    <nome>Vale dos Sem Luz</nome>
     <autor reference="../../Livro/autor"/>
   </Livro>
 </list>

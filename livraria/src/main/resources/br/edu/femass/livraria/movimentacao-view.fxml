@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.text.*?>
-<?import javafx.scene.media.*?>
-<?import java.lang.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
@@ -12,12 +10,12 @@
             <children>
                 <Button fx:id="BtnDevolver" disable="false" layoutX="66.0" layoutY="312.0" mnemonicParsing="false" onAction="#BtnDevolver_Action" prefHeight="30.0" prefWidth="81.0" text="Devolver" />
                 <Button fx:id="BtnAlugar" disable="false" layoutX="347.0" layoutY="312.0" mnemonicParsing="false" onAction="#BtnAlugar_Action" prefHeight="30.0" prefWidth="81.0" text="Alugar" />
-            <ChoiceBox fx:id="ChBoxLivros" layoutX="22.0" layoutY="273.0" prefHeight="25.0" prefWidth="298.0" />
-            <ChoiceBox fx:id="ChBoxAcademicos" layoutX="334.0" layoutY="273.0" prefHeight="25.0" prefWidth="189.0" />
             <ListView fx:id="LstLivros" layoutX="18.0" layoutY="28.0" prefHeight="238.0" prefWidth="298.0" />
             <ListView fx:id="LstAcademicos" layoutX="334.0" layoutY="28.0" prefHeight="238.0" prefWidth="189.0" />
             <Text layoutX="132.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Livros" />
             <Text layoutX="399.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Acadêmios" />
+            <ComboBox fx:id="CboLivros" layoutX="18.0" layoutY="273.0" prefHeight="25.0" prefWidth="298.0" />
+            <ComboBox fx:id="CboAcademicos" layoutX="334.0" layoutY="273.0" prefHeight="25.0" prefWidth="189.0" />
             </children>
         </Pane>
     </children>

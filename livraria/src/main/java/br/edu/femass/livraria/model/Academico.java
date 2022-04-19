@@ -3,6 +3,7 @@ package br.edu.femass.livraria.model;
 import javafx.scene.control.Alert;
 import lombok.Data;
 
+import java.io.IOException;
 import java.time.LocalDate;
 import java.util.*;
 
@@ -51,12 +52,14 @@ public class Academico {
     public void Alugar_Livro(Livro livro){
         Alert errorAlert = new Alert(Alert.AlertType.ERROR);
         for (Livro livros: this.livros_alugados) {
-            if(livro.getData_emprestimo().isAfter(livro.getData_prev_delovucao())){
-                this.livros_atrasados = true;
-                Alert infoAlert = new Alert(Alert.AlertType.INFORMATION);
-                infoAlert.setHeaderText("Informativo.");
-                infoAlert.setContentText("O livro " + livro.getNome() + "está atrasado.");
-                infoAlert.showAndWait();
+            if(livro.getData_emprestimo()!= null || livro.getData_prev_delovucao() != null){
+                if(livro.getData_emprestimo().isAfter(livro.getData_prev_delovucao())){
+                    this.livros_atrasados = true;
+                    Alert infoAlert = new Alert(Alert.AlertType.INFORMATION);
+                    infoAlert.setHeaderText("Informativo.");
+                    infoAlert.setContentText("O livro " + livro.getNome() + "está atrasado.");
+                    infoAlert.showAndWait();
+                }
             }
         }
         if(this.livros_atrasados){
@@ -87,30 +90,25 @@ public class Academico {
             sucessAlert.showAndWait();
         }
     }
-    public void Retornar_Livro(Livro livro){
-        Alert infoAlert = new Alert(Alert.AlertType.INFORMATION);
-        if(this.livros_alugados == null){return;}
-        for (Livro livros: this.livros_alugados) {
-            if(livros == livro){
+        public void Retornar_Livro(Livro livro){
+            if(this.livros_alugados == null){return;}
+            if(livros_alugados.contains(livro)) {
+                this.getLivros_alugados().remove(livro);
+                Alert errorAlert = new Alert(Alert.AlertType.ERROR);
+                errorAlert.setHeaderText("Error 403");
+                errorAlert.setContentText("Você não está com esse livro em sua posse.");
+                errorAlert.showAndWait();
+                }
+            else {
+                livro.setEmprestimo(false);
+                livro.setData_emprestimo(null);
+                livro.setData_prev_delovucao(null);
+                livro.setData_devolucao(LocalDate.now());
                 this.livros_alugados.remove(livro);
                 Alert sucessAlert = new Alert(Alert.AlertType.CONFIRMATION);
                 sucessAlert.setContentText("O livro " + livro.getNome() + "foi devolvido.");
                 sucessAlert.showAndWait();
             }
-            if(livro.getData_emprestimo().isAfter(livro.getData_prev_delovucao())){
-                infoAlert.setHeaderText("Informativo.");
-                infoAlert.setContentText("O livro " + livro.getNome() + "está atrasado.");
-                infoAlert.showAndWait();
-                break;
-            }
-            else{
-                this.livros_atrasados = false;
-                this.livros_alugados.remove(livro);
-                infoAlert.setHeaderText("Informativo.");
-                infoAlert.setContentText("Você está sem pendências.");
-                infoAlert.showAndWait();
-                break;
-            }
         }
     }
-}
+
