@@ -21,18 +21,20 @@
     <identificador>3</identificador>
     <nome>Vale dos Sem Luz</nome>
     <autor reference="../../Livro/autor"/>
-    <data__emprestimo>2022-04-18</data__emprestimo>
-    <data__devolucao>2022-04-18</data__devolucao>
-    <data__prev__delovucao>2022-04-23</data__prev__delovucao>
+    <data__emprestimo>2022-04-19</data__emprestimo>
+    <data__devolucao>2022-04-19</data__devolucao>
+    <data__prev__delovucao>2022-04-24</data__prev__delovucao>
   </Livro>
   <Livro>
     <ano>2022</ano>
     <edicao>225</edicao>
     <genero>Suspense</genero>
-    <emprestimo>false</emprestimo>
+    <emprestimo>true</emprestimo>
     <disponibolidade>true</disponibolidade>
     <identificador>4</identificador>
     <nome>Vale dos Sem Luz</nome>
     <autor reference="../../Livro/autor"/>
+    <data__emprestimo>2022-04-19</data__emprestimo>
+    <data__prev__delovucao>2022-04-24</data__prev__delovucao>
   </Livro>
 </list>

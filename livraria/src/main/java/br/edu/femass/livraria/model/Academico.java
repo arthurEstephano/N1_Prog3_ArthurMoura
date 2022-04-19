@@ -57,7 +57,7 @@ public class Academico {
                     this.livros_atrasados = true;
                     Alert infoAlert = new Alert(Alert.AlertType.INFORMATION);
                     infoAlert.setHeaderText("Informativo.");
-                    infoAlert.setContentText("O livro " + livro.getNome() + "está atrasado.");
+                    infoAlert.setContentText("O livro " + livro.getNome() + " está atrasado.");
                     infoAlert.showAndWait();
                 }
             }
@@ -67,15 +67,15 @@ public class Academico {
             errorAlert.setContentText("Empréstimo bloqueado, você tem livros atrasados!");
             errorAlert.showAndWait();
         }
-        if(this.livros_alugados.size() >= 5){
+        else if(this.livros_alugados.size() >= 5){
             errorAlert.setHeaderText("Error 403");
             errorAlert.setContentText("Empréstimo bloqueado, você já têm 5 livros em sua posse!");
             errorAlert.showAndWait();
-        } else if (livro.getEmprestimo()) {
+        } else if(livro.getEmprestimo()) {
             errorAlert.setHeaderText("Error 403");
             errorAlert.setContentText("Empréstimo bloqueado, o livro em questão já está em posse de outro.");
             errorAlert.showAndWait();
-        }else if (!livro.getDisponibolidade()){
+        }else if(!livro.getDisponibolidade()){
             errorAlert.setHeaderText("Error 403");
             errorAlert.setContentText("Empréstimo bloqueado, o livro em questão só está disponível para leitura.");
             errorAlert.showAndWait();
@@ -106,7 +106,7 @@ public class Academico {
                 livro.setData_devolucao(LocalDate.now());
                 this.livros_alugados.remove(livro);
                 Alert sucessAlert = new Alert(Alert.AlertType.CONFIRMATION);
-                sucessAlert.setContentText("O livro " + livro.getNome() + "foi devolvido.");
+                sucessAlert.setContentText("O livro " + livro.getNome() + " foi devolvido.");
                 sucessAlert.showAndWait();
             }
         }
