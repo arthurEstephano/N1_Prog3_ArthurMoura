@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<HBox minHeight="200.0" minWidth="483.0" prefHeight="200.0" prefWidth="200.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.edu.femass.livraria.gui.MenuController">
+   <children>
+       <Pane minHeight="200.0" minWidth="225.0" prefHeight="200.0" prefWidth="483.0">
+          <children>
+              <Button fx:id="BtnAcademicos" layoutX="60.0" layoutY="31.0" mnemonicParsing="false" onAction="#BtnAcademicos_Action" prefHeight="53.0" prefWidth="99.0" text="Academicos" />
+              <Button fx:id="BtnLivros" layoutX="192.0" layoutY="31.0" mnemonicParsing="false" onAction="#BtnLivros_Action" prefHeight="53.0" prefWidth="99.0" text="Livros" />
+              <Button fx:id="BtnAutores" layoutX="321.0" layoutY="31.0" mnemonicParsing="false" onAction="#BtnAutores_Action" prefHeight="53.0" prefWidth="99.0" text="Autores" />
+              <Button fx:id="BtnCopiar" layoutX="60.0" layoutY="119.0" mnemonicParsing="false" onAction="#BtnCopiar_Action" prefHeight="53.0" prefWidth="99.0" text="Copiar Livros" />
+              <Button fx:id="BtnMovimentacao" layoutX="192.0" layoutY="119.0" mnemonicParsing="false" onAction="#BtnMovimentacao_Action" prefHeight="53.0" prefWidth="99.0" text="Mov. de Livros" />
+              <Button fx:id="BtnBiblio" layoutX="321.0" layoutY="119.0" mnemonicParsing="false" onAction="#BtnBiblio_Action" prefHeight="53.0" prefWidth="99.0" text="Bibliotecários" />
+          </children>
+       </Pane>
+   </children>
+</HBox>
