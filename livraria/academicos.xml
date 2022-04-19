@@ -5,24 +5,7 @@
     <estado__academico>Professor</estado__academico>
     <matricula>1</matricula>
     <livros__atrasados>false</livros__atrasados>
-    <livros__alugados>
-      <br.edu.femass.livraria.model.Livro>
-        <ano>2022</ano>
-        <edicao>225</edicao>
-        <genero>Suspense</genero>
-        <emprestimo>true</emprestimo>
-        <disponibolidade>true</disponibolidade>
-        <identificador>3</identificador>
-        <nome>Vale dos Sem Luz</nome>
-        <autor>
-          <nome>Yago</nome>
-          <sobrenome>Frossard</sobrenome>
-        </autor>
-        <data__emprestimo>2022-04-19</data__emprestimo>
-        <data__devolucao>2022-04-19</data__devolucao>
-        <data__prev__delovucao>2022-04-24</data__prev__delovucao>
-      </br.edu.femass.livraria.model.Livro>
-    </livros__alugados>
+    <livros__alugados/>
     <dias>5</dias>
   </Academico>
   <Academico>

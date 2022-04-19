@@ -18,7 +18,7 @@ public class Academico {
     private Integer matricula;
     private Boolean livros_atrasados = false;
     private List<Livro> livros_alugados = new ArrayList<>();
-    private Integer dias;
+    private long dias;
 
     public Academico() {
         this.matricula = proxima_matricula;
@@ -31,9 +31,10 @@ public class Academico {
         }
     }
 
-    public Academico(String nome, String cpf) {
+    public Academico(String nome, String cpf, Estado_Academico estado_academico) {
         this.nome = nome;
         this.cpf = cpf;
+        this.estado_academico = estado_academico;
         this.matricula = proxima_matricula;
         proxima_matricula++;
         if(this.getEstado_academico() == Professor){
@@ -50,40 +51,37 @@ public class Academico {
     }
 
     public void Alugar_Livro(Livro livro){
+        //TODO: Para usar os métodos de teste, deve-se comentar todas as linnhas na classe acadêmico que contém "Alert"
         Alert errorAlert = new Alert(Alert.AlertType.ERROR);
+        errorAlert.setHeaderText("Error 403");
         for (Livro livros: this.livros_alugados) {
-            if(livro.getData_emprestimo()!= null || livro.getData_prev_delovucao() != null){
-                if(livro.getData_emprestimo().isAfter(livro.getData_prev_delovucao())){
-                    this.livros_atrasados = true;
-                    Alert infoAlert = new Alert(Alert.AlertType.INFORMATION);
-                    infoAlert.setHeaderText("Informativo.");
-                    infoAlert.setContentText("O livro " + livro.getNome() + " está atrasado.");
-                    infoAlert.showAndWait();
+                if(livros.getData_emprestimo() != null) {
+                    if (livros.getData_prev_delovucao().isBefore(LocalDate.now())) {
+                        this.livros_atrasados = true;
+                        Alert infoAlert = new Alert(Alert.AlertType.INFORMATION);
+                        infoAlert.setHeaderText("Informativo.");
+                        infoAlert.setContentText("O livro " + livro.getNome() + " está atrasado.");
+                        infoAlert.showAndWait();
+                    }
                 }
-            }
         }
         if(this.livros_atrasados){
-            errorAlert.setHeaderText("Error 403");
             errorAlert.setContentText("Empréstimo bloqueado, você tem livros atrasados!");
             errorAlert.showAndWait();
         }
         else if(this.livros_alugados.size() >= 5){
-            errorAlert.setHeaderText("Error 403");
             errorAlert.setContentText("Empréstimo bloqueado, você já têm 5 livros em sua posse!");
             errorAlert.showAndWait();
         } else if(livro.getEmprestimo()) {
             if(this.livros_alugados.contains(livro)){
-                errorAlert.setHeaderText("Error 403");
                 errorAlert.setContentText("Empréstimo bloqueado, o livro em questão já em sua posse.");
                 errorAlert.showAndWait();
             }
             else{
-                errorAlert.setHeaderText("Error 403");
                 errorAlert.setContentText("Empréstimo bloqueado, o livro em questão já está em posse de outro.");
                 errorAlert.showAndWait();
             }
         }else if(!livro.getDisponibolidade()){
-            errorAlert.setHeaderText("Error 403");
             errorAlert.setContentText("Empréstimo bloqueado, o livro em questão só está disponível para leitura.");
             errorAlert.showAndWait();
         }
@@ -98,6 +96,7 @@ public class Academico {
         }
     }
         public void Retornar_Livro(Livro livro){
+            //TODO: Para usar os métodos de teste, deve-se comentar todas as linnhas na classe acadêmico que contém "Alert"
             if(this.livros_alugados == null){return;}
             if(livros_alugados.contains(livro)) {
                 this.getLivros_alugados().remove(livro);

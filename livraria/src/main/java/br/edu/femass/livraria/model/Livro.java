@@ -14,9 +14,9 @@ public class Livro {
     private Integer identificador;
     private String nome;
     private Autor autor;
-    private LocalDate data_emprestimo;
-    private LocalDate data_devolucao;
-    private LocalDate data_prev_delovucao;
+    private LocalDate data_emprestimo = null;
+    private LocalDate data_devolucao = null;
+    private LocalDate data_prev_delovucao = null;
 
     public Livro() {
         identificador = proximo_identificador;

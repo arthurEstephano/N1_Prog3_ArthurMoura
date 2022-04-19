@@ -15,11 +15,7 @@ public class LibraryApplication extends Application {
         stage.setTitle("Menu interativo.");
         stage.setScene(sceneMenu);
         stage.show();
-
-        //TODO: Tirar dúvida sobre seleção de paineis múltiplos
     }
-
-
 
     public static void main(String[] args) {
         launch();
