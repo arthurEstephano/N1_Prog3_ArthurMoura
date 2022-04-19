@@ -23,11 +23,6 @@ class AcademicoTest {
     @Test
     void alugar_Livro() {
         this.livro.setDisponibolidade(true);
-        try {
-            alugar_Livro();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
         this.acade.Alugar_Livro(livro);
         Assertions.assertEquals(this.getLivro(), this.acade.getLivros_alugados().get(0));
     }
