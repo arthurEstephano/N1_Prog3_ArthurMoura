@@ -72,9 +72,16 @@ public class Academico {
             errorAlert.setContentText("Empréstimo bloqueado, você já têm 5 livros em sua posse!");
             errorAlert.showAndWait();
         } else if(livro.getEmprestimo()) {
-            errorAlert.setHeaderText("Error 403");
-            errorAlert.setContentText("Empréstimo bloqueado, o livro em questão já está em posse de outro.");
-            errorAlert.showAndWait();
+            if(this.livros_alugados.contains(livro)){
+                errorAlert.setHeaderText("Error 403");
+                errorAlert.setContentText("Empréstimo bloqueado, o livro em questão já em sua posse.");
+                errorAlert.showAndWait();
+            }
+            else{
+                errorAlert.setHeaderText("Error 403");
+                errorAlert.setContentText("Empréstimo bloqueado, o livro em questão já está em posse de outro.");
+                errorAlert.showAndWait();
+            }
         }else if(!livro.getDisponibolidade()){
             errorAlert.setHeaderText("Error 403");
             errorAlert.setContentText("Empréstimo bloqueado, o livro em questão só está disponível para leitura.");
