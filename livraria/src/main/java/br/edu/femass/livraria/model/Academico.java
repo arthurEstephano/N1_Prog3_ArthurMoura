@@ -98,8 +98,7 @@ public class Academico {
         public void Retornar_Livro(Livro livro){
             //TODO: Para usar os métodos de teste, deve-se comentar todas as linnhas na classe acadêmico que contém "Alert"
             if(this.livros_alugados == null){return;}
-            if(livros_alugados.contains(livro)) {
-                this.getLivros_alugados().remove(livro);
+            if(!livros_alugados.contains(livro)) {
                 Alert errorAlert = new Alert(Alert.AlertType.ERROR);
                 errorAlert.setHeaderText("Error 403");
                 errorAlert.setContentText("Você não está com esse livro em sua posse.");
