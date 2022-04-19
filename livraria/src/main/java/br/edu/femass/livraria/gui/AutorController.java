@@ -78,7 +78,6 @@ public class AutorController implements Initializable {
 
     @FXML
     private void BtnIncluir_Action(ActionEvent evento) {
-        atualizarLista();
         habilitarInterface(true);
         limparTela();
         TxtNome.requestFocus();
@@ -104,7 +103,7 @@ public class AutorController implements Initializable {
         Autor autor = new Autor();
         autor.setSobrenome(TxtSobrenome.getText());
         autor.setNome(TxtNome.getText());
-        if (TxtSobrenome.getText() == "" || TxtNome.getText() == ""){
+        if (TxtSobrenome != null || TxtNome != null){
             Alert errorAlert = new Alert(Alert.AlertType.ERROR);
             errorAlert.setHeaderText("Error 403");
             errorAlert.setContentText("É proíbido gravar dados nulos!");
